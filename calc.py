@@ -30,22 +30,35 @@ def percentage(a,b):
         return a/b*100
     except ZeroDivisionError:
         return "unable to find the percentage"
+    
+total = None
+
 while True:
-    a=int(input("Enter the first number: "))
+    if total is None:
+        a=int(input("Enter the first number: "))
+    else:
+        a=total
+
     b=int(input("Enter the second number: "))
     choice = int(input("Enter your choice either 1 or 2 or 3 or 4 or 5 or 6: "))
+    
     if choice == 1:
-        print(f"The addition of {a} and {b} is {add(a,b)}")
+        total=add(a,b)
+        print(f"The addition of {a} and {b} is {total}")
     elif choice == 2:
-        print(sub(a,b))
+        total=sub(a,b)
+        print(total)
     elif choice == 3:
-        print(mul(a,b))
+        total=mul(a,b)
+        print(total)
     elif choice == 4:
-        print(div(a,b))
+        totalt=div(a,b)
+        print(total)
     elif choice == 5:
-        print(percentage(a,b))
+        totalt=percentage(a,b)
+        print(total)
     elif choice == 6:
-        exit
+        break
     else:
         print("Invalid Choice")
     next=input("Do you want to use operation Yy/Nn ")
